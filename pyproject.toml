@@ -1,0 +1,23 @@
+[project]
+name = "easyghost"
+version = "0.1.0"
+description = "EasyGhost : éditeur de cartes mentales (PySide6)"
+requires-python = ">=3.10"
+dependencies = ["PySide6>=6.6"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+build = ["pyinstaller"]
+
+[project.scripts]
+easyghost = "easyghost.__main__:main"
+
+[tool.setuptools]
+packages = ["easyghost", "easyghost.formats"]
+
+[tool.setuptools.package-data]
+easyghost = ["icons/*/*.svg", "icons/LICENSE-lucide.txt", "icons/AppIcon.icns"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
